@@ -1,0 +1,129 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    background: rgba(99, 99, 255, 1);
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    flex-direction: column;
+    width: 100%;
+}
+
+header {
+    padding: 30px;
+    margin: 10px;
+}
+
+main{
+    width: 40%;
+    display: flex;
+    min-height: 30vh;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.texto{
+    justify-content:space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.texto input, .texto button, .texto select{
+    margin-bottom: 10px;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    border-radius: 3px;
+}
+
+.texto input{
+    text-overflow: ellipsis;
+    padding: 10px;
+    width: 55%;
+}
+.texto button{
+    padding: 10px;
+    width: 25%;
+}
+.texto select{
+    padding: 10px;
+    align-self: right;
+    width: 25%;
+}
+button:hover{
+    background: gray;
+
+}
+.tarefas {
+    background: #fff;
+    transition: all 1s ease;
+   
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+.tarefas ul{
+   
+    width: 70%;
+    padding: 10px;
+    list-style: none;
+}
+.tarefas button{
+    width: 15%;
+    display: flex;
+    padding: 10px;
+    margin: 0;
+}
+
+.btnEdit{
+    cursor: pointer;
+    width: 25%;
+    background:rgb(99, 255, 255);;
+}
+.btnRemove{
+    cursor: pointer;
+    width: 25%;
+    background: red;
+}
+.itens {
+    transition: all 1s;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.completo {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+
+.tarefa{
+    overflow: hidden;
+    white-space: nowrap;
+    width: 70%;
+    text-overflow: ellipsis;
+}
+.Tarefas-lista{
+    width: 70%;
+   
+}
+
+
+.show{
+    display: flex;
+}
+.hide{
+    display: none;
+}
