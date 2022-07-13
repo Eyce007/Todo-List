@@ -33,7 +33,7 @@ function AddTarefa(e){
     var contentValor = content.value;
     criaElementos(contentValor)
     content.value = ''
-    content.focus()    
+    content.focus()  
 }
 
 function verificar(e){
@@ -61,27 +61,30 @@ function complete(i){
 function filter(){
     var FiltroValor = Options.value
     var Divs = divItens.childNodes
-    console.log(Divs)
-    for(let i = 1; i < Divs.length; i++){
-        Divs[i].style.display = 'flex'
-        switch (FiltroValor){
+    FilterAction(FiltroValor, Divs)
+} 
+
+function FilterAction(O, C){
+    for(let i = 1; i < C.length; i++){
+        C[i].style.display = 'flex'
+        switch (O){
             case 'all':
-                Divs[i].style.display = 'flex'
+                C[i].style.display = 'flex'
                 break;
             case 'completed':
-                if(Divs[i].classList.contains('completo')){
-                    Divs[i].style.display ='flex'
+                if(C[i].classList.contains('completo')){
+                    C[i].style.display ='flex'
                 }else{
-                    Divs[i].style.display = 'none'
+                    C[i].style.display = 'none'
                 }
                 break;
             case 'uncompleted':
-                if(!Divs[i].classList.contains('completo')){
-                    Divs[i].style.display == 'flex'
+                if(!C[i].classList.contains('completo')){
+                    C[i].style.display == 'flex'
                 }else{
-                    Divs[i].style.display = 'none'
+                    C[i].style.display = 'none'
                 }
                 break;                
         }
     }
-}      
+}     
