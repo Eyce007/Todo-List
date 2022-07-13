@@ -119,11 +119,3 @@ button:hover{
     width: 70%;
    
 }
-
-
-.show{
-    display: flex;
-}
-.hide{
-    display: none;
-}

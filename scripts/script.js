@@ -7,7 +7,7 @@ BtnPronto.addEventListener('click', AddTarefa)
 
 divItens.addEventListener('click', verificar)
 
-/* Options.addEventListener('change', filter) */
+Options.addEventListener('change', filter)
 
 function criaElementos(contentValor){
     var div = document.createElement('div')
@@ -29,11 +29,11 @@ function criaElementos(contentValor){
 }
    
 function AddTarefa(e){
-    e.preventDefault();
+    e.preventDefault();   
     var contentValor = content.value;
     criaElementos(contentValor)
     content.value = ''
-    content.focus()
+    content.focus()    
 }
 
 function verificar(e){
@@ -58,3 +58,30 @@ function complete(i){
     tudo.classList.toggle('completo')
 }
 
+function filter(){
+    var FiltroValor = Options.value
+    var Divs = divItens.childNodes
+    console.log(Divs)
+    for(let i = 1; i < Divs.length; i++){
+        Divs[i].style.display = 'flex'
+        switch (FiltroValor){
+            case 'all':
+                Divs[i].style.display = 'flex'
+                break;
+            case 'completed':
+                if(Divs[i].classList.contains('completo')){
+                    Divs[i].style.display ='flex'
+                }else{
+                    Divs[i].style.display = 'none'
+                }
+                break;
+            case 'uncompleted':
+                if(!Divs[i].classList.contains('completo')){
+                    Divs[i].style.display == 'flex'
+                }else{
+                    Divs[i].style.display = 'none'
+                }
+                break;                
+        }
+    }
+}      
